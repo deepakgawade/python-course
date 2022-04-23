@@ -1,4 +1,4 @@
-from webob import second
+#from webob import second
 
 
 class Node:
@@ -31,9 +31,11 @@ if __name__=='__main__':
     llist.head=Node(1)
     second=Node(2)
     third=Node(3)
+    fourth=Node(4)
 
     #link first node with second
     llist.head.next=second
     second.next=third
+    third.next=fourth
 
     llist.printList()
