@@ -12,7 +12,25 @@ from MySQLdb import Binary
 
 class BinarySearch:
 
-    def count_rotation(nums):
+    def count_rotation(self,nums):
+        n = len(nums)
+        if n==0:
+            return 0
+        start =0
+        end = n-1
+
+        while start< end:
+            mid= end +start//2
+
+            prev=(mid-1+n)%n
+            next =(mid+1)%n
+
+            if nums[mid]<nums[prev] and nums[mid]<=nums[next]:
+                return mid
+            elif nums[mid]<nums[start]:end =mid-1
+            elif nums[mid]>nums[end]:start=mid+1
+            else: return 0
+
         pass 
 
     def count_rotations_linear(self,nums):
@@ -96,14 +114,17 @@ if __name__=='__main__':
         'output': 0
     }   
     test.append(test7)
-
-    num0=test0["input"]["nums"]
-    output0=test0["output"]
-
+    #check for all test cases
     search=BinarySearch()
-    result0=search.count_rotations_linear(num0)
-    if result0==output0:
-        print("Test paased")
-        print(result0)
+    for t in test:
+        num0=t["input"]["nums"]
+        output0=t["output"]
+        # result0=search.count_rotations_linear(num0)
+        result0 =search.count_rotation(num0)
+        if result0==output0:
+            print("Test paased")
+            print(result0)
+        else:print("Test Failed")
+
 
    
