@@ -5,6 +5,7 @@
 #3.update the profile information of user , with givaen username.
 #4.List of all users of platform , sorted by username.
 
+#class and methods
 class User:
     def __init__(self, username, name, email):
         self.username=username
@@ -15,6 +16,34 @@ class User:
     def introduceYourself(self, guest_name):
         print("Hi {}, I'm {}! Contact me at {}.".format(guest_name,self.name,self.email
         ))
+
+class UserDatabase:
+    def __init__(self):
+        self.users=[]
+
+    def insert(self,user):
+        i=0
+        while i< len(self.users):
+            #find first username greater then new user name.
+            if self.users[i].username>user.username:
+                break
+            i+=1
+        self.users.insert(i, user)
+    
+    def find(self, username):
+        for user in self.users:
+            if user.username==username:
+                return user
+    
+    def update(self, user):
+        target=self.find(user.username)
+        target.name,target.email=user.name,user.email
+
+    def list_all(self):
+        return self.users
+
+    
+
 
 
 if __name__=='__main__':
