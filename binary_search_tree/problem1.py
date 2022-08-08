@@ -44,9 +44,44 @@ class UserDatabase:
 
     
 
+#implemantaion of tree node
+class TreeNode:
+    def __init__(self,key):
+        self.key=key
+        self.left=None
+        self.right=None
 
 
 if __name__=='__main__':
-    user2=User("baka", "baka raav", "email@baka")
-    user2.introduceYourself("deepak")
+    # hemant=User("hemant", "baka raav", "email@baka")
+    # Umesh=User("umesh", "umesh d", "umesh@baka")
+
+    # Zarin=User("zarin", "zarin khan", "zarin@baka")
+
+    # database= UserDatabase()
+    # database.insert(hemant)
+    # database.insert(Umesh)
+    # database.insert(Zarin)
+    # Zarin=User("zarin", "zarin k", "zarinkhan@baka")
+
+    # database.update(Zarin)
+
+    # allUsers=database.list_all()
+    # for user in allUsers:
+
+    #     print("User(username={},email={},name={})".format(user.username,user.email,user.name))
+
+    node0=TreeNode(3)
+    node1=TreeNode(4)
+    node2=TreeNode(5)
+    #user2.introduceYourself("deepak")
+print(node0.key)
+
+node0.left=node1
+node0.right=node2
+
+tree=node0
+print(tree.key)
+print(tree.left.key)
+print(tree.right.key)
 
