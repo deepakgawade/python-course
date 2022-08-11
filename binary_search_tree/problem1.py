@@ -50,6 +50,8 @@ class TreeNode:
         self.key=key
         self.left=None
         self.right=None
+    
+
 
 
 if __name__=='__main__':
@@ -71,17 +73,76 @@ if __name__=='__main__':
 
     #     print("User(username={},email={},name={})".format(user.username,user.email,user.name))
 
-    node0=TreeNode(3)
-    node1=TreeNode(4)
-    node2=TreeNode(5)
+    # node0=TreeNode(2)
+    # node1=TreeNode(3)
+    # node2=TreeNode(5)
+    # node3=TreeNode(1)
+
+    # node4=TreeNode(3)
+
+    # node5=TreeNode(7)
+
+    # node6=TreeNode(4)
+    # node7=TreeNode(6)
+    # node8=TreeNode(8)
+
+
+    # node0.left=node1
+    # node1.left=node3
+
+    # node0.right=node2
+    # node2.left=node4
+    # node4.right=node6
+
+    # node2.right=node5
+    # node5.left=node7
+    # node5.right=node8
+
+    # print(node0.key)
+
+    # node0.right=node2
+    # node0.left=node1
+
+    # tree=node0
+    # print(tree.key)
+    # print(tree.left.key)
+    # print(tree.right.key)
+
+    #instead of using manual wa to create each node, why not use a tuple : which will save value in th form of pairs.
+    tree_tuple=((1,3,None),2,((None,3,4),5,(6,7,8)))
+    #Now to cerate a node we write a function adn use recurssuion to form whole tree.
+    def parse_tuple(data):
+        print(data)
+        if isinstance(data,tuple) and len(data)==3:
+            node =TreeNode(data[1])
+            node.left=parse_tuple(data[0])#here te recursion will start.
+            node.right=parse_tuple(data[2])#same here
+        elif data is None:#this is stoping conditon if tere is no data at leaf we want call parse_tuple again.
+            node=None
+        else:
+            node=TreeNode(data)
+        return node
     #user2.introduceYourself("deepak")
-print(node0.key)
+    parse_tuple(tree_tuple)
 
-node0.left=node1
-node0.right=node2
+#after running code it will print data in following manner
+# ((1, 3, None), 2, ((None, 3, 4), 5, (6, 7, 8)))
+# (1, 3, None)
+# 1
+# None
+# ((None, 3, 4), 5, (6, 7, 8))
+# (None, 3, 4)
+# None
+# 4
+# (6, 7, 8)
+# 6
+# 8
 
-tree=node0
-print(tree.key)
-print(tree.left.key)
-print(tree.right.key)
+
+
+
+
+
+
+
 
