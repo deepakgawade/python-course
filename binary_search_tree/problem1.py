@@ -123,12 +123,31 @@ if __name__=='__main__':
             node=TreeNode(data)
         return node
     #user2.introduceYourself("deepak")
-    parse_tuple(tree_tuple)
+    tree1 =parse_tuple(tree_tuple)
 
+    print("".format(tree1.left.key
+    ))
+    print("this is left most node {}".format(tree1.right))
+
+
+    def tree_to_tuple(treeData):
+        
+        #tupleData=(left,key,right)
+        if treeData is None:
+            return None
+            #(left,key,right)=tree_to_tuple(treeData.left),treeData.key,  tree_to_tuple(treeData.right)
+        if treeData.left is None and treeData.right is None:
+            return treeData.key
+        
+
+        return tree_to_tuple(treeData.left),treeData.key,tree_to_tuple(treeData.right)
+    data=tree_to_tuple(tree1)
+    print(data)
 #after running code it will print data in following manner
-# ((1, 3, None), 2, ((None, 3, 4), 5, (6, 7, 8)))
+# ((1, 3, None), 2, ((None, 3, 4 ), 5, (6, 7, 8)))
 # (1, 3, None)
 # 1
+
 # None
 # ((None, 3, 4), 5, (6, 7, 8))
 # (None, 3, 4)
@@ -138,7 +157,7 @@ if __name__=='__main__':
 # 6
 # 8
 
-
+ 
 
 
 
