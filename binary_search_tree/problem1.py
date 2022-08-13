@@ -143,6 +143,7 @@ if __name__=='__main__':
         return tree_to_tuple(treeData.left),treeData.key,tree_to_tuple(treeData.right)
     data=tree_to_tuple(tree1)
     print(data)
+    
 #after running code it will print data in following manner
 # ((1, 3, None), 2, ((None, 3, 4 ), 5, (6, 7, 8)))
 # (1, 3, None)
@@ -156,6 +157,28 @@ if __name__=='__main__':
 # (6, 7, 8)
 # 6
 # 8
+    #helper fuction for displayig tree for easier visuallization.
+    def display_keys(node, space='\t', level=0):
+        #print(node.key if node else None,level)
+        #if node is empty
+        if node is None:
+            print(space*level+'@')
+            return
+        #if node is a leaf
+        if node.left is None and node.right is None:
+            print(space*level+ str(node.key))
+            return
+        #if the node has children
+        display_keys(node.right, space,level+1)
+        print(space*level+str(node.key))
+        display_keys(node.left, space, level+1)
+    display_keys(tree1,'  ')
+        
+tupple2=(((7,8,(6,67,10)),11,56),15,(60,65,(None,70,(67,81,100))))
+
+tree2=parse_tuple(tupple2)
+
+display_keys(tree2)
 
  
 
