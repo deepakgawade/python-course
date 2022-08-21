@@ -17,7 +17,9 @@ if __name__=="__main__":
             node=TreeNode(data)
         return node
     tree_tuple=((1,3,None),2,((None,3,4),5,(6,7,8)))
+    tree_tuple2=((None),2,(None,5,(None,7,(None,55,(None,0,6)))))
     tree1=parse_tuple(tree_tuple)
+    tree2=parse_tuple(tree_tuple2)
     def height_tree(node):
         
         if node is None:
@@ -34,4 +36,18 @@ if __name__=="__main__":
 
     size=size_tree(tree1)
     print("size of tree is {}".format(size))
+    def min_depth(node):
+        
+        if node is None:
+            return 0
+        if node.right is None and node.left is None:
+            return 1
+        if node.right is None:
+            return min_depth(node.left) +1
+        if node.left is None:
+            return min_depth(node.right) + 1   
+        return 1 + min( min_depth(node.left),min_depth(node.right))
+
+    minDepth=min_depth(tree2)
+    print(" minimum depth {}".format(minDepth))    
     pass
