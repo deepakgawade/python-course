@@ -20,6 +20,8 @@ if __name__=="__main__":
     tree_tuple2=((None),2,(None,5,(None,7,(None,55,(None,0,6)))))
     tree1=parse_tuple(tree_tuple)
     tree2=parse_tuple(tree_tuple2)
+    
+    
     def height_tree(node):
         
         if node is None:

@@ -56,4 +56,20 @@ if __name__=="__main__":
     tree2=parse_tuple(tree_tuple2)
 
     print(diameter(tree1))
+
+
+# class Solution:
+#     def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+#         result = [0]
+#         def traverse(node):
+#             if not node:
+#                 return -1
+#             left_height = traverse(node.left)
+#             right_height = traverse(node.right)
+#             result[0] = max(result[0], 2 + left_height + right_height)
+            
+#             return 1 + max(left_height, right_height)
+        
+#         traverse(root)
+#         return result[0]
     
