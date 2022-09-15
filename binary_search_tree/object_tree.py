@@ -23,3 +23,5 @@ if __name__=="__main__":
     print('{} \n {}\n{}'.format(tree.value,tree.left.value.name,tree.right.value.name))
 
     pass
+
+#we can use display function which we have written already.
