@@ -3,7 +3,6 @@
 # if value is greater then right sub tree key then recursiveky insert into right sub tree,if node is none add value to that node.
 # 
 
-from unicodedata import name
 
 
 class BSTNode:
@@ -18,10 +17,16 @@ class User:
         self.name=name
         self.email=email
 
+
 if __name__=="__main__":
+
     jandesh=User('jandesh','Jandesh Tulaskar', 'jandesh@gmail.com')
     binidya=User('bindiya','Bindiya kansekar', 'biniya@gmail.com')
     sonaksh=User('sonaksh', 'Sonkshi Sinha', 'sonksh@gmail.com')
+    radha=User('radha', 'radha Sinha', 'radha@gmail.com')
+    seema=User('seema', 'seema Sinha', 'seema@gmail.com')
+    subha=User('subha', 'subha Sinha', 'subha@gmail.com')
+
     #created object as value
 
     def insert_node(node,key,value):
@@ -40,6 +45,11 @@ if __name__=="__main__":
     tree=insert_node(None, jandesh.username,jandesh)
     insert_node(tree, binidya.username,binidya)
     insert_node(tree,sonaksh.username,sonaksh)
+    insert_node(tree,radha.username,radha)
+    insert_node(tree,seema.username,seema)
+    insert_node(tree,subha.username,subha)
+
+    #if we change the order of insertion, will create a skew tree and complexity will be of O(n),rather then O(logn)
 
     def display_keys(node, space='\t', level=0):
         #print(node.key if node else None,level)
@@ -57,4 +67,3 @@ if __name__=="__main__":
         display_keys(node.left, space, level+1)
 
     display_keys(tree)
-    
