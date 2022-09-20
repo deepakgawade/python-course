@@ -4,7 +4,20 @@
 # 
 
 
-
+def display_keys(node, space='\t', level=0):
+        #print(node.key if node else None,level)
+        #if node is empty
+    if node is None:
+        print(space*level+'@')
+        return
+        #if node is a leaf
+    if node.left is None and node.right is None:
+        print(space*level+ str(node.key))
+        return
+        #if the node has children
+    display_keys(node.right, space,level+1)
+    print(space*level+str(node.key))
+    display_keys(node.left, space, level+1)
 class BSTNode:
     def __init__(self,key,value=None):
         self.key=key
@@ -16,6 +29,8 @@ class User:
         self.username=username
         self.name=name
         self.email=email
+    
+
 
 
 if __name__=="__main__":
@@ -51,19 +66,6 @@ if __name__=="__main__":
 
     #if we change the order of insertion, will create a skew tree and complexity will be of O(n),rather then O(logn)
 
-    def display_keys(node, space='\t', level=0):
-        #print(node.key if node else None,level)
-        #if node is empty
-        if node is None:
-            print(space*level+'@')
-            return
-        #if node is a leaf
-        if node.left is None and node.right is None:
-            print(space*level+ str(node.key))
-            return
-        #if the node has children
-        display_keys(node.right, space,level+1)
-        print(space*level+str(node.key))
-        display_keys(node.left, space, level+1)
 
-    display_keys(tree)
+
+    jandesh.display_keys(tree)
