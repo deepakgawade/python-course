@@ -19,3 +19,4 @@ if __name__=="__main__":
         return not any(queuq[i:])
 
     #create a tree using tupple and test the solution for completeness.
+    #also add solution with DFS
