@@ -1,4 +1,4 @@
-def getGCD(num1, num2):
+def getGCD(num1, num2):#O(N)
     gcd=0
     for i in range(1,min(num1, num2)+1):
         if num1%i==0 and num2%i==0:
@@ -6,7 +6,7 @@ def getGCD(num1, num2):
         
     return gcd
 
-def optGCD(nm1,nm2):
+def optGCD(nm1,nm2):#O(log(min (a,b)))
     if nm2==0:
         return nm1
     return optGCD(nm2, nm1%nm2)
