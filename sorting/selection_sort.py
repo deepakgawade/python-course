@@ -16,6 +16,7 @@ def selection_sort(elements):
 
     print(elements)
 #time complexity is O(n2)
+    #direct swaping with last min largest element
 def bubble_sort(elements1):
     temp=0
     for i in range(6):
@@ -29,13 +30,33 @@ def bubble_sort(elements1):
         
     print(elements1)
     #time complexity will be O(n2)
+    # adjanent swapping
+
+def insertion_sort(element2):
+
+    temp=0
+    for i in range(6):
+        j=i
+
+        while j>0 and element2[j-1]>element2[j]:
+            temp=element2[j]
+            element2[j]=element2[j-1]
+            element2[j-1]=temp
+
+            j-=1
+
+    print(element2)
+
+
+    
 
     
 
 if __name__=="__main__":
     elements= [19,54,86,10,8,43]
    # selection_sort(elements)
-    bubble_sort(elements)
+    #bubble_sort(elements)
+    insertion_sort(elements)
  
 
         
