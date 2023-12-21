@@ -12,6 +12,9 @@ def bubble_sort(arr, n):
     
     bubble_sort(arr, n-1)
 
+def insertion_sort():
+    pass
+
 if __name__== "__main__":
 
       elements= [19,54,86,10,8,43]
