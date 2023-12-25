@@ -12,8 +12,27 @@ def removeDuplicate(arr):
     # for i in range(len(arr)-1):
     #     if arr[i]==arr[i+1]:
 
+
+
+def pointRemoveDuplicate(arr):
+    i=0
+    for j in range(1,len(arr)):
+        if arr[i] != arr[j]:
+            print(arr[j])
+            i+=1
+            arr[i]=arr[j]
+        
+        else:
+            pass
+
+    newSize=i+1
+
+    for k in range(newSize, len(arr)):
+        arr[k]="_"
+
+    print(arr)
 if __name__=="__main__":
-    elements=[1,1,2,2,33,33,4,5]
-    removeDuplicate(elements)
+    elements=[1,1,2,2,4,5,33,33]
+    pointRemoveDuplicate(elements)
     
 
