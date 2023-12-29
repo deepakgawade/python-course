@@ -41,13 +41,14 @@ def merge(arr, low, mid, high):
         arr[i]=temp[i-low]
     print(f"arr: {arr}")
 
-
+# timecomplexity is O(logn)
 
    
     
 
 def merge_sort(arr, n):
     ms(arr, 0, n-1)
+    print(f"second smallest :{arr[1]}\n second largest{arr[n-2]}")
    # print(elements)
 
 if __name__=="__main__":
