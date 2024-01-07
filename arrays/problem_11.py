@@ -6,14 +6,19 @@ def countSumSubarray(arr,k):
     count=0
 
     for i in range(n):
+
         for j in range(i,n):
+     
 
             sum=0
-            for p in range(j, j-i+1):
+            for p in range(i, j+1):
                 sum+=arr[p]
+              
 
             if sum== k:
+              
                 count+=1
+    
     return count
 
     
