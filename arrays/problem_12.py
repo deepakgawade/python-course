@@ -26,9 +26,24 @@ def twoNumExistIndex6(arr,k):
 
     return [-1,-1]
 
+
+
+#using dict key value pair
+def withDict(arr,k):
+    n=len(arr)
+    newDict={}
+    for i in range(n):
+        moreNeeded= k-arr[i]
+        if moreNeeded in newDict:
+            return "Yes"
+        newDict[arr[i]]=i
+
+    return "No"
+
 if __name__=="__main__":
     elements=[2,6,5,8,11]
-    print(twoNumExist(elements,15))
-    print(twoNumExistIndex6(elements,15))
+    # print(twoNumExist(elements,15))
+    # print(twoNumExistIndex6(elements,15))
+    print(withDict(elements,14))
     
 
