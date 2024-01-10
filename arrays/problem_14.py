@@ -13,6 +13,12 @@ def mooreAlgo(arr):
             count+=1
         else:
             count-=1
+    count=0
+    for i in range(n):
+        if arr[i]==element:
+            count+=1
+
     if count>(n/2):
         return element
+    return -1
     
