@@ -51,6 +51,30 @@ def betterLongestConsecutive(arr):
         longest= max(count, longest) #here it checks for longest one
     return longest
 
+def optimalSetLongestConsecutive(arr):
+    n = len(arr)
+    if n==0:
+        return 0
+
+    longest=1
+    count=0
+
+    s=set()
+
+    for i in range(n):
+        s.add(arr[i])
+    
+    for it in s:
+        if it-1 not in s:
+            count+=1
+            x=it
+            while x+1 in s:
+                count+=1
+                x+=1
+            longest=max(longest,count)
+    return longest
+
+
 
 
 if __name__=="__main__":
