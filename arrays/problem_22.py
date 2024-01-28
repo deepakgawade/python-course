@@ -16,6 +16,7 @@ def optimizeRotate(matrix,n):
             #swap the elements rows to column
             matrix[i][j],matrix[j][i]=matrix[j][i],matrix[i][j]
     for i in range(n):
+        #reverse all rows
         matrix[i].reverse()
     return matrix
 
