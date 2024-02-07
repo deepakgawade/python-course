@@ -25,6 +25,7 @@ def  better4Sum(arr,x):
 def optimal4Sum(arr, x):
 
     n=len(arr)
+    arr.sort()
     answer=[]
 
     for i in range(n):
@@ -43,13 +44,28 @@ def optimal4Sum(arr, x):
 
                     temp=[arr[i],arr[j],arr[k],arr[l]]
                     answer.append(temp)
-                    
+                    k+=1
+                    l-=1
+                    while(k<l and arr[k]==arr[k-1]):
+                        k+=1
+                    while(k<l and arr[l]==arr[l+1]):
+                        l-=1
 
 
                 elif sum<x:
                     k+=1
                 else: 
                     l-=1
+
+    return answer
+
+if __name__=="__main__":
+   elemts= [1,0,-1,0,-2,2]
+   x=0
+   anser= optimal4Sum(elemts,0)
+
+   for item in anser:
+       print(item)
 
 
 
