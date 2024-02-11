@@ -126,6 +126,8 @@ if __name__=="__main__":
 
     optimal2(arr1,arr2)
 
+    
+
 
 
 
