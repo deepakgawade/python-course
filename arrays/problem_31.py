@@ -21,11 +21,23 @@ def bruteMergeOvelapping(arr):
 
     return answer
 
+def optimalOverlappinArray(arr):
+    n=len(arr)
+    answer=[]
+    for i in range(n):
+
+        if len(answer)==0 or answer[-1][1]<arr[i][0]:
+            answer.append(arr[i])
+
+
+        else:
+            answer[-1][1]=max(answer[-1][1],arr[i][1] ) 
+    return answer
 
 
 
 
 if __name__=="__main__":
     elemst=[[1,3],[2,6],[8,10],[15,18]]
-    print(bruteMergeOvelapping(elemst))
+    print(optimalOverlappinArray(elemst))
 
