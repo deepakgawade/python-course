@@ -76,7 +76,7 @@ def binaryRecursive(arr, low, high,target):
     if arr[mid]==target:
         return mid
     
-    elif arr[mid] > target:
+    elif arr[mid] < target:
          binaryRecursive(arr,mid+1,high, target) 
 
     else:
