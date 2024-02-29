@@ -1,3 +1,10 @@
+
+class Shop{
+   List<String> _items=['wheat', 'rice', 'potato'];
+
+   get items=>_items;
+
+}
 void main() {
 
   
