@@ -16,7 +16,7 @@ def searchRotatedArray(arr,target):
         #now we will check for sorted part
 
         if arr[low]<=arr[mid]:
-
+            ##remove one of part by moving pointer
             if arr[low]<=target and target<=arr[mid]:
 
                 high= mid-1
@@ -26,6 +26,7 @@ def searchRotatedArray(arr,target):
                 low=mid+1
 
         else:
+             ##remove one of side by moving pointer
             if arr[mid]<=target and target<=arr[high]:
 
                 low= mid+1
