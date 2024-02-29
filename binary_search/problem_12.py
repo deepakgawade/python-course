@@ -2,9 +2,9 @@ def singleElementInArray(array):
     #(even,odd),(even,odd),(element)(odd,even)(odd,even)
 
     n=len(array)
-    low=0
-    high=n-1
-#edge cases
+    low=1
+    high=n-2
+    #edge cases
     if n==1:return array[0]
 
     if array[0]!=array[1]: return array[0]
