@@ -24,16 +24,27 @@ def calculateHours(arrX,hourly):
     return total
 
 def minimRateToEatBananas(arrY,h):
+    low=1
+    high=findMax(arrY)
 
-    maxix=findMax(arrY)
+    while low<=high:
+        mid =(low+high)//2
 
-    for i in range(1,maxix+1):
-
-        hours=calculateHours(arrY,i)
+        hours=calculateHours(arrY,mid)
 
         if hours<=h:
-            return i
-    return maxix
+            high=mid-1
+        else:
+            low=mid+1
+    return low
+
+    # for i in range(1,maxix+1):
+
+    #     hours=calculateHours(arrY,i)
+
+    #     if hours<=h:
+    #         return i
+    # return maxix
 
 
 if __name__=="__main__":
