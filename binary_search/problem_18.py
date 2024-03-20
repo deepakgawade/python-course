@@ -33,12 +33,25 @@ def garden(arr, m,k):
         mini = min(mini, arr[i])
         maxi = max(maxi, arr[i])
 
+    low=mini
+    high=maxi
+
+    while low<=high:
+
+        mid= (low+high)//2
+
+        if isPossible(arr,mid,m,k):
+            high=mid-1
+
+        else:
+            low=mid+1
+
     
-    for j in range(mini, maxi+1):
-        if isPossible(arr,j,m,k):
-            return j
+    # for j in range(mini, maxi+1):
+    #     if isPossible(arr,j,m,k):
+    #         return j
         
-    return -1
+    return low
 
 if __name__=="__main__":
     arr=[7, 7, 7, 7, 13, 11, 12, 7]
