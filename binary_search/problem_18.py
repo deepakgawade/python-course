@@ -41,10 +41,12 @@ def garden(arr, m,k):
         mid= (low+high)//2
 
         if isPossible(arr,mid,m,k):
-            high=mid-1
+
+            high = mid-1
 
         else:
-            low=mid+1
+            
+            low = mid+1
 
     
     # for j in range(mini, maxi+1):
