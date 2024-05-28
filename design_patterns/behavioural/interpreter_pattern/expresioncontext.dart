@@ -1,7 +1,7 @@
 class ExpressionContext{
   final List<String> _solution=[];
 
-  int catCow=0;
+
 
   List<String> get solutionSteps=>_solution;
 
