@@ -1,15 +1,39 @@
 void main(){
   List<int> data=[1,1,2,2,2,3,3];
-  print(removedDuplicates(data));
+  print(inPlaceRemoveDuplicates(data));
 
 }
+List<int> inPlaceRemoveDuplicates(List<int> list){
+  int i=0;
+  int j=1;
+  int n=list.length;
+
+
+  while(j<n){
+
+    if(list[i]!=list[j]){
+      i+=1;
+   
+
+    list[i]=list[j];
+
+    
+  }
+  j+=1;
+ 
+}
+ return list.sublist(0,i+1);
+}
+
+
 List<String> removedDuplicates(List<int> list){
+
   List<String> answer=[];
 
   int len=list.length;
 
   int i=0;
-print(len);
+  print(len);
   while(i<len ){
 
     if(answer.isEmpty){
