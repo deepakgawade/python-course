@@ -9,4 +9,5 @@ def fibonaci(N):
     
 
 if __name__=="__main__":
-    print(fibonaci(5))
+    for i in range(10):
+        print(fibonaci(i))
