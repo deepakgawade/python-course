@@ -30,9 +30,40 @@ def level_order(root):
 
     return res 
 
+def inorder(root, out):
+    if not root:
+        return 
+    inorder(root.left, out)
+    out.append(root.value)
+    inorder(root.right, out)
+
+def postorder(root, out):
+    if not root:
+        return
+    postorder(root.left,out)
+    postorder(root.right, out)
+    out.append(root.value)
+
+
+def preorder(root, out):
+    if not root:
+        return
+    out.append(root.value)
+    preorder(root.left, out)
+    preorder(root.right,out)
+
 
 
 if __name__ == "__main__":
     arr = [1,2,3,4,5,6,7,8,9]
     root = build_tree_from_array(arr)
     print(level_order(root))  # Output: [[1], [2, 3], [4, 5, 6]]
+    out = []
+    inorder(root, out)
+    print(f"inorder trvaersal result:", out)
+    out =[]
+    preorder(root, out)
+    print(f"preorder traversal result:", out)
+    out = []
+    postorder(root, out)
+    print(f"postorder traversal result:", out)
